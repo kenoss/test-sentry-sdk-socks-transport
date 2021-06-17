@@ -1,0 +1,31 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "sentry-test"
+version = "0.1.0"
+description = ""
+authors = ["keno <keno.ss57@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+sentry-sdk = "^1.1.0"
+urllib3 = {version = "^1.26.5", extras = ["socks"]}
+
+[tool.poetry.dev-dependencies]
+pysen = {version = "^0.9.1", extras = ["lint"]}
+pytest = "^5.2"
+
+[tool.pysen.lint]
+enable_black = true
+enable_flake8 = true
+enable_isort = true
+enable_mypy = true
+mypy_preset = "strict"
+line_length = 128
+py_version = "py38"
+
+[[tool.pysen.lint.mypy_targets]]
+paths = [""]
